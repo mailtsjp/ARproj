@@ -24,28 +24,28 @@ var models = [
         scale: '0.05 0.05 0.05',
         info: 'Gift box, Lv. 5, HP 10/10',
         rotation: '0 180 0',
-        position: '0 100 30',
+        position: '0 0 100',
     },
     {
         url: './assets/magnemite/scene.gltf',
         scale: '0.5 0.5 0.5',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
-        position: '0 10 30',
+        position: '0 0 50',
     },
     {
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
-        position: '0 10 30',
+        position: '0 0 80',
     },
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
-        position: '0 10 300',
+        position: '0 0 100',
     },
 ];
 
