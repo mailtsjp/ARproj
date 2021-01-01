@@ -1,7 +1,6 @@
-
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'GIFT';
+    button.innerText = 'Gift';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
@@ -12,9 +11,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-                // decomment the following and add coordinates:
-                lat: 1.301180,
-                lng: 103.899220,
+                 lat: 1.301180,
+                 lng: 103.899223,
             },
         },
     ];
@@ -23,8 +21,8 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/magnemite/scene.gltf',
-        scale: '0.1 0.1 0.1',
-        info: 'magnemite, Lv. 5, HP 10/10',
+        scale: '0.5 0.5 0.5',
+        info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
     },
     {
