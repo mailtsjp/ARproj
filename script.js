@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = ' GIFT ';
+    button.innerText = ' ? ';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
@@ -24,6 +24,7 @@ var models = [
         scale: '0.5 0.5 0.5',
         info: 'Gift box, Lv. 5, HP 10/10',
         rotation: '0 180 0',
+        position: '0 10 30',
     },
     {
         url: './assets/magnemite/scene.gltf',
@@ -37,12 +38,14 @@ var models = [
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
+        position: '0 10 30',
     },
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
+        position: '0 10 30',
     },
 ];
 
