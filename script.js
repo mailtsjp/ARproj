@@ -20,10 +20,17 @@ function staticLoadPlaces() {
 
 var models = [
     {
+        url: './assets/gift_box/scene.gltf',
+        scale: '0.5 0.5 0.5',
+        info: 'Gift box, Lv. 5, HP 10/10',
+        rotation: '0 180 0',
+    },
+    {
         url: './assets/magnemite/scene.gltf',
         scale: '0.5 0.5 0.5',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
+        position: '0 10 30',
     },
     {
         url: './assets/articuno/scene.gltf',
