@@ -21,7 +21,15 @@
         vr-mode-ui='enabled: false' 
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-camera gps-camera rotation-reader></a-camera>
+    
+        <a-text
+        value="Happy New Year"
+        look-at="[gps-camera]"
+        scale="50 50 50"
+        gps-entity-place="latitude: 1.304610; longitude: 103.900932;">
+        </a-text>
+
+        <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
 <div class="centered">
     <button data-action="change"></button>
