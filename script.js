@@ -1,7 +1,7 @@
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'GIFT";
+    button.innerText = 'GIFT';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
