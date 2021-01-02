@@ -24,8 +24,8 @@ var models = [
     
     {
         url: './assets/gift_box/scene.gltf',
-        scale: '0.05 0.05 0.05',
         info: 'Gift box, Lv. 5, HP 10/10',
+        scale: '0.05 0.05 0.05',        
         rotation: '0 90 0',
         position: '1 1 20',
     },
@@ -41,7 +41,7 @@ var models = [
     {
         url: './assets/gift/scene.gltf',
         info: 'gift, Lv. 5, HP 10/10',
-        scale: '0.50 0.50 0.50'
+        scale: '0.50 0.50 0.50',
         rotation: '0 0 0',
         position: '1 1 20',
         
