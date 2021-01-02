@@ -13,6 +13,9 @@ function staticLoadPlaces() {
             location: {
                  lat: 1.301180,
                  lng: 103.899223,
+
+                 lat: 1.301180,
+                 lng: 103.899223,
             },
         },
     ];
@@ -41,6 +44,7 @@ var models = [
         rotation: '0 0 0',
         position: '10 1 100',
     },
+    /*
     {
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
@@ -55,6 +59,7 @@ var models = [
         info: 'Dragonite, Lv. 5, HP 10/10',
         position: '1 1 100',
     },
+    */
 ];
 
 var modelIndex = 0;
