@@ -27,7 +27,7 @@ var models = [
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
         info: 'giftbox, Lv. 5, HP 10/10',
-        position: '1 -60 -60',
+        //position: '1 -60 -60',
     },
     /*
     {
@@ -43,7 +43,7 @@ var models = [
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
         info: 'gift, Lv. 5, HP 10/10',
-        position: '1 1 -10',
+        //position: '1 1 -10',
         
     },
     
@@ -52,14 +52,14 @@ var models = [
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
-        position: '1 1 80',
+        //position: '1 1 80',
     },
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
         info: 'Dragonite, Lv. 5, HP 10/10',
-        position: '1 1 100',
+        //position: '1 1 100',
     },
     
 ];
