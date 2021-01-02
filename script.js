@@ -35,12 +35,12 @@ var models = [
         info: 'cake, Lv. 5, HP 10/10',
         rotation: '0 90 0',
         position: '1 1 10',
-        scale: '0.50 0.50 0.50'
+        scale: '0.2 0.2 0.2'
     },
     
     {
         url: './assets/gift/scene.gltf',
-        info: 'gift2, Lv. 5, HP 10/10',
+        info: 'gift, Lv. 5, HP 10/10',
         rotation: '0 0 0',
         position: '1 1 10',
         scale: '0.50 0.50 0.50'
