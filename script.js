@@ -21,15 +21,15 @@ function staticLoadPlaces() {
 }
 
 var models = [
-    /*
+    
     {
         url: './assets/gift_box/scene.gltf',
         scale: '0.05 0.05 0.05',
         info: 'Gift box, Lv. 5, HP 10/10',
         rotation: '0 90 0',
-        position: '1 1 100',
+        position: '1 1 -50',
     },
-    */
+    /*
     {
         url: './assets/cake/scene.gltf',
         info: 'cake, Lv. 5, HP 10/10',
@@ -37,12 +37,12 @@ var models = [
         position: '1 1 -10',
         scale: '0.2 0.2 0.2'
     },
-    
+    */
     {
         url: './assets/gift/scene.gltf',
         info: 'gift, Lv. 5, HP 10/10',
         rotation: '0 0 0',
-        position: '1 1 -100',
+        position: '1 1 20',
         scale: '0.50 0.50 0.50'
     },
     /*
