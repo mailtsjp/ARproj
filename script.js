@@ -32,18 +32,17 @@ var models = [
     */
     {
         url: './assets/cake/scene.gltf',
-        scale: '0.05 0.05 0.05',
         info: 'cake, Lv. 5, HP 10/10',
         rotation: '0 90 0',
         position: '1 1 100',
+        scale: '50 50 50'
     },
     
     {
         url: './assets/gift/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        info: 'gift2, Lv. 5, HP 10/10',
+        info: 'gift, Lv. 5, HP 10/10',
         rotation: '0 0 0',
-        position: '1 1 100',
+        
     },
     /*
     {
