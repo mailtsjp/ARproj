@@ -27,7 +27,7 @@ var models = [
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
         info: 'giftbox, Lv. 5, HP 10/10',
-        position: '1 10 -20',
+        position: '1 -10 -20',
     },
     /*
     {
@@ -43,7 +43,7 @@ var models = [
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
         info: 'gift, Lv. 5, HP 10/10',
-        position: '1 1 20',
+        position: '1 -10 -20',
         
     },
     /*
