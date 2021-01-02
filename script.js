@@ -40,9 +40,9 @@ var models = [
     
     {
         url: './assets/gift/scene.gltf',
-        info: 'gift, Lv. 5, HP 10/10',
+        info: 'gift2, Lv. 5, HP 10/10',
         rotation: '0 0 0',
-        
+        position: '1 1 100',
     },
     /*
     {
