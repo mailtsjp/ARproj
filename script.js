@@ -22,6 +22,7 @@ function staticLoadPlaces() {
 }
 
 var models = [
+    /*
     {
         url: './assets/gift_box/scene.gltf',
         scale: '0.05 0.05 0.05',
@@ -29,6 +30,7 @@ var models = [
         rotation: '0 90 0',
         position: '1 1 100',
     },
+    */
     {
         url: './assets/cake/scene.gltf',
         scale: '0.05 0.05 0.05',
