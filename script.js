@@ -33,7 +33,7 @@ var models = [
         rotation: '0 90 0',
         position: '10 1 100',
     },
-    }
+    
     {
         url: './assets/gift/scene.gltf',
         scale: '0.5 0.5 0.5',
