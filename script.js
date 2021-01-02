@@ -11,10 +11,13 @@ function staticLoadPlaces() {
         {
             name: 'Remote Gifting',
             location: {
-                 lat: 1.301180,
-                 lng: 103.899223,
+                //Hme 
+                //lat: 1.301180,
+                 //lng: 103.899223,
 
-                 
+                 //shaw
+                 lat: 1.297660,
+                 lng: 103.890518,
             },
         },
     ];
