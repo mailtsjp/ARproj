@@ -11,7 +11,9 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
+    <!--
     <script src="./script.js"></script>
+    -->
     <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 
@@ -21,18 +23,7 @@
         vr-mode-ui='enabled: false' 
         embedded
         arjs='sourceType: webcam; videoTexture: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <!--
-        <a-box
-        material='color: green' 
-        gps-entity-place='latitude: 1.295280; longitude: 103.853210;' 
-        position='0 50 20'>
-        </a-box>
-    --> 
-        <!--
-        material="color: yellow" 
-        gps-entity-place="latitude: 1.297660; longitude: 103.890520;"/>
-        -->
-        
+             
         <a-text
         value="Shaws preschool in katong"
         look-at="[gps-camera]"
@@ -47,11 +38,18 @@
         gps-entity-place="latitude: 1.301180; longitude: 103.899223;">
         </a-text>
 
+        <!--Takashimaya-->
+        <a-box
+        material='color: green' 
+        gps-entity-place='latitude: 1.295280; longitude: 103.853210;' 
+        position='0 50 20'>
+        </a-box>
+
         <a-text
-        value="This content will always face you."
+        value="Takashimaya This content will always face you."
         look-at="[gps-camera]"
         scale="50 50 50"
-        gps-entity-place="latitude: 1.301180; longitude: 103.899223;">
+        gps-entity-place="latitude: 1.3024; longitude: 103.8351;">
         </a-text>
 
         <a-text
