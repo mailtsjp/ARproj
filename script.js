@@ -27,11 +27,19 @@ var models = [
         position: '1 1 100',
     },
     {
+        url: './assets/cake/scene.gltf',
+        scale: '0.05 0.05 0.05',
+        info: 'cake, Lv. 5, HP 10/10',
+        rotation: '0 90 0',
+        position: '10 1 100',
+    },
+    }
+    {
         url: './assets/gift/scene.gltf',
         scale: '0.5 0.5 0.5',
         info: 'gift2, Lv. 5, HP 10/10',
-        rotation: '0 180 0',
-        position: '0 1 100',
+        rotation: '0 0 0',
+        position: '10 1 100',
     },
     {
         url: './assets/articuno/scene.gltf',
