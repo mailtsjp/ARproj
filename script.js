@@ -1,12 +1,13 @@
 window.onload = () => {
-    document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+   //document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = ' Push ';
 
-    let places = staticLoadPlaces();
-    let getlatlong = getlocation();
-
-    renderPlaces(places);
+    //let places = staticLoadPlaces();
+    //renderPlaces(places);
+    
+    let currlatlong = getlocation();
+    renderPlaces(currlatlong);
 };
 
 function staticLoadPlaces() {
@@ -28,13 +29,23 @@ function staticLoadPlaces() {
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {   
       x.innerHTML = "Geolocation is not supported by this browser.";
     }
   }
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+function showPosition(position) {
+   // x.innerHTML = "Latitude: " + position.coords.latitude + 
+    //"<br>Longitude: " + position.coords.longitude;
+    return[
+        {
+        currgeolocname: 'Current geolocation',
+        location: {
+            lat =  position.coords.latitude,
+            lng =  position.coords.longitude,
+        },
+        },
+    ];
+
   }
 var models = [
     
@@ -120,10 +131,10 @@ function whereami(){
     console.log(pos); // this returns an object as well with properties but pos.lat or pos.lng returns undefined
     return pos;
 };
-function renderPlaces(places) {
+function renderPlaces(currlatlong) {
     let scene = document.querySelector('a-scene');
 
-    places.forEach((place) => {
+        currlatlong.forEach((place) => {
         //let latitude = place.location.lat;
         //let longitude = place.location.lng;
 
