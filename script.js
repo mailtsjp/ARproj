@@ -1,9 +1,12 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
+    button.innerText = 'PUSH';
 
-    let places = staticLoadPlaces();
-    renderPlaces(places);
+    //let places = staticLoadPlaces();
+    //renderPlaces(places);
+
+    let currlatlong = getlocation();
+    renderPlaces(currlatlong);
 };
 
 function staticLoadPlaces() {
@@ -29,13 +32,13 @@ function getLocation() {
 function showPosition(position) {
    // x.innerHTML = "Latitude: " + position.coords.latitude + 
     //"<br>Longitude: " + position.coords.longitude;
-    return[
+    return [
         {
         currgeolocname: 'Current geolocation',
         location: {
             lat =  position.coords.latitude,
             lng =  position.coords.longitude,
-        },
+         },
         },
     ];
 
