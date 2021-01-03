@@ -1,10 +1,11 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v6';
+    button.innerText = 'v7';
 
+    window.alert(1);
     showPosition();
     //document.write(position.coords.latitude);
-    window.alert(5 + 6);
+    window.alert(2);
 
     
     if(navigator.getLocation){
