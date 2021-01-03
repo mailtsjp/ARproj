@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v1';
+    button.innerText = 'v2';
 
     let places = staticLoadPlaces(position);
     renderPlaces(places);
@@ -22,24 +22,56 @@ function staticLoadPlaces(position) {
 }
 
 var models = [
-    {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        info: 'Magnemite, Lv. 5, HP 10/10',
+    {   
+        //esta
+        Lat:' 1.301180',
+        Long: '103.899223',
+        url: './assets/gift_box/scene.gltf',
+        scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
+        info: 'giftbox, Lv. 5, HP 10/10',
+        position: '1 -30 -60',
     },
+    /*
     {
+        url: './assets/cake/scene.gltf',
+        info: 'cake, Lv. 5, HP 10/10',
+        rotation: '0 90 0',
+        position: '1 1 -10',
+        scale: '0.2 0.2 0.2'
+    },
+    */
+    {
+        // Katong shopping
+        Lat: '1.304610',
+        Long: '103.900932',
+        url: './assets/gift/scene.gltf',
+        scale: '1 1 1',
+        rotation: '0 180 0',
+        info: 'gift, Lv. 5, HP 10/10',
+        position: '1 1 1',
+        
+    },
+    
+    {
+        //Shaws preschool 437893
+        Lat: '1.297660',
+        Long: '103.890520',
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
+        position: '1 1 80',
     },
+    /*
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        info: 'Dragonite, Lv. 99, HP 150/150',
+        info: 'Dragonite, Lv. 5, HP 10/10',
+        //position: '1 1 100',
     },
+    */
 ];
 
 var modelIndex = 0;
