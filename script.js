@@ -6,7 +6,7 @@ window.onload = () => {
     renderPlaces(places);
 };
 
-function staticLoadPlaces() {
+function staticLoadPlaces(position) {
     return [
         {
             name: 'current location',
