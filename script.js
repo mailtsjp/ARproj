@@ -2,14 +2,24 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = 'v3';
 
+    
+    document.write(position.coords.latitude);
+        //window.alert(5 + 6);
+
     if(navigator.getLocation){
     let places = navigator.geolocation.getCurrentPosition(showPos, showErr);
+    document.write(places);
     renderPlaces(places);
     }
     else{
         alert("Sorry! your Browser does not support Geolocation API")
         }
 };
+function showLocation(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    alert("Latitude : " + latitude + " Longitude: " + longitude);
+ }
 function getCurrentPosition(position) {
     return [
         {
