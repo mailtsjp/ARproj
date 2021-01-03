@@ -2,14 +2,14 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = 'PUSH';
 
-    //let places = staticLoadPlaces();
-    //renderPlaces(places);
+    let places = staticLoadPlaces(position);
+    renderPlaces(places);
 
-    let currlatlong = getlocation();
-    renderPlaces(currlatlong);
+    //let currlatlong = getlocation();
+    //renderPlaces(currlatlong);
 };
 
-function staticLoadPlaces() {
+function staticLoadPlaces(position) {
     return [
         {
             name: 'Remote Gifting', 
@@ -17,6 +17,10 @@ function staticLoadPlaces() {
                 //Hme 
                 //lat: 1.301180,
                  //lng: 103.899223,
+                 //lat: ${position.coords.latitude},
+                 //lng: ${position.coords.longitude},
+                 lat: position.coords.latitude,
+                 lng: position.coords.longitude,
 
             },
         },
@@ -127,24 +131,24 @@ function whereami(){
     console.log(pos); // this returns an object as well with properties but pos.lat or pos.lng returns undefined
     return pos;
 };
-function renderPlaces(currlatlong) {
+function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-        currlatlong.forEach((place) => {
-        //let latitude = place.location.lat;
-        //let longitude = place.location.lng;
+        places.forEach((place) => {
+        let currlatitude = place.location.lat;
+        let currlongitude = place.location.lng;
 
         // Getting geoloation dynamically 
         //whereami();
-        let latitude = position.coords.latitude;
-        let longitude = position.coords.longitude;
+        //let latitude = position.coords.latitude;
+        //let longitude = position.coords.longitude;
         //-------------------------------
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
         // Draw 3d model
-        if((models[modelIndex].lat==1.301180) && (models[modelIndex].long == 103.899223))
+        if((models[modelIndex].lat==currlatitude) && (models[modelIndex].long == currlongitude))
                 setModel(models[modelIndex], model);
         //-----------
         model.setAttribute('animation-mixer', '');
