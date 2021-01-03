@@ -13,15 +13,12 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'Remote Gifting',
+            name: 'Remote Gifting', 
             location: {
                 //Hme 
                 //lat: 1.301180,
                  //lng: 103.899223,
 
-                 //shaw
-                 lat =  getLocation(),
-                 lng =  103.890518,
             },
         },
     ];
