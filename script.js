@@ -4,101 +4,42 @@ window.onload = () => {
 
     let places = staticLoadPlaces(position);
     renderPlaces(places);
-
-    //let currlatlong = getlocation();
-    //renderPlaces(currlatlong);
 };
 
-function staticLoadPlaces(position) {
+function staticLoadPlaces() {
     return [
         {
-            name: 'Remote Gifting', 
+            name: 'current location',
             location: {
-                //Hme 
-                //lat: 1.301180,
-                 //lng: 103.899223,
-                 //lat: ${position.coords.latitude},
-                 //lng: ${position.coords.longitude},
-                 lat: position.coords.latitude,
-                 lng: position.coords.longitude,
+                // lat: <your-latitude>,
+                // lng: <your-longitude>,
 
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
             },
         },
     ];
 }
-function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {   
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
-function showPosition(position) {
-   // x.innerHTML = "Latitude: " + position.coords.latitude + 
-    //"<br>Longitude: " + position.coords.longitude;
-    return [
-        {
-        currgeolocname: 'Current geolocation',
-        location: {
-            lat =  position.coords.latitude,
-            lng =  position.coords.longitude,
-         },
-        },
-    ];
 
-  }
 var models = [
-    
-    {   
-        //esta
-        Lat:' 1.301180',
-        Long: '103.899223',
-        url: './assets/gift_box/scene.gltf',
-        scale: '0.08 0.08 0.08',
+    {
+        url: './assets/magnemite/scene.gltf',
+        scale: '0.5 0.5 0.5',
+        info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
-        info: 'giftbox, Lv. 5, HP 10/10',
-        position: '1 -30 -60',
     },
-    /*
     {
-        url: './assets/cake/scene.gltf',
-        info: 'cake, Lv. 5, HP 10/10',
-        rotation: '0 90 0',
-        position: '1 1 -10',
-        scale: '0.2 0.2 0.2'
-    },
-    */
-    {
-        // Katong shopping
-        Lat: '1.304610',
-        Long: '103.900932',
-        url: './assets/gift/scene.gltf',
-        scale: '1 1 1',
-        rotation: '0 180 0',
-        info: 'gift, Lv. 5, HP 10/10',
-        position: '1 1 1',
-        
-    },
-    
-    {
-        //Shaws preschool 437893
-        Lat: '1.297660',
-        Long: '103.890520',
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Articuno, Lv. 80, HP 100/100',
-        position: '1 1 80',
     },
-    /*
     {
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        info: 'Dragonite, Lv. 5, HP 10/10',
-        //position: '1 1 100',
+        info: 'Dragonite, Lv. 99, HP 150/150',
     },
-    */
 ];
 
 var modelIndex = 0;
@@ -120,37 +61,19 @@ var setModel = function (model, entity) {
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
 };
-function whereami(){
-    let pos = {};
-    navigator.geolocation.getCurrentPosition((position)=> {
-    //pos.lat = position.coords.latitude;
-    //pos.lng = position.coords.longitude;
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    })
-    console.log(pos); // this returns an object as well with properties but pos.lat or pos.lng returns undefined
-    return pos;
-};
+
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-        places.forEach((place) => {
-        let currlatitude = place.location.lat;
-        let currlongitude = place.location.lng;
-
-        // Getting geoloation dynamically 
-        //whereami();
-        //let latitude = position.coords.latitude;
-        //let longitude = position.coords.longitude;
-        //-------------------------------
+    places.forEach((place) => {
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        // Draw 3d model
-        if((models[modelIndex].lat==currlatitude) && (models[modelIndex].long == currlongitude))
-                setModel(models[modelIndex], model);
-        //-----------
+        setModel(models[modelIndex], model);
+
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
