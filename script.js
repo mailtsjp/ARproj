@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v7';
+    button.innerText = 'v8';
 //--------------------
       //showPosition();
    if(navigator.geolocation) {
