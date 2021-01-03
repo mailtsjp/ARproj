@@ -2,10 +2,11 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = 'v6';
 
-    
-    document.write(position.coords.latitude);
-        //window.alert(5 + 6);
+    showPosition();
+    //document.write(position.coords.latitude);
+    window.alert(5 + 6);
 
+    
     if(navigator.getLocation){
     let places = navigator.geolocation.getCurrentPosition(showPos, showErr);
     document.write(places);
@@ -14,8 +15,17 @@ window.onload = () => {
     else{
         alert("Sorry! your Browser does not support Geolocation API")
         }
-};
-
+}
+function showPosition() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+            document.getElementById("result").innerHTML = positionInfo;
+        });
+    } else {
+        alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
+}
 function showLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
