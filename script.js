@@ -1,8 +1,11 @@
 window.onload = () => {
+    document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = ' Push ';
 
     let places = staticLoadPlaces();
+    let getlatlong = getlocation();
+
     renderPlaces(places);
 };
 
@@ -16,16 +19,29 @@ function staticLoadPlaces() {
                  //lng: 103.899223,
 
                  //shaw
-                 lat: 1.297660,
-                 lng: 103.890518,
+                 lat =  getLocation(),
+                 lng =  103.890518,
             },
         },
     ];
 }
-
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
 var models = [
     
-    {
+    {   
+        //esta
+        Lat:' 1.301180',
+        Long: '103.899223',
         url: './assets/gift_box/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
@@ -42,6 +58,9 @@ var models = [
     },
     */
     {
+        // Katong shopping
+        Lat: '1.304610',
+        Long: '103.900932',
         url: './assets/gift/scene.gltf',
         scale: '1 1 1',
         rotation: '0 180 0',
@@ -51,6 +70,9 @@ var models = [
     },
     
     {
+        //Shaws preschool 437893
+        Lat: '1.297660',
+        Long: '103.890520',
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
@@ -87,19 +109,37 @@ var setModel = function (model, entity) {
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
 };
-
+function whereami(){
+    let pos = {};
+    navigator.geolocation.getCurrentPosition((position)=> {
+    //pos.lat = position.coords.latitude;
+    //pos.lng = position.coords.longitude;
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    })
+    console.log(pos); // this returns an object as well with properties but pos.lat or pos.lng returns undefined
+    return pos;
+};
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        //let latitude = place.location.lat;
+        //let longitude = place.location.lng;
+
+        // Getting geoloation dynamically 
+        //whereami();
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        //-------------------------------
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
-
+        // Draw 3d model
+        if((models[modelIndex].lat==1.301180) && (models[modelIndex].long == 103.899223))
+                setModel(models[modelIndex], model);
+        //-----------
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
