@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
+    button.innerText = 'v3';
 
     if(navigator.getLocation){
     let places = navigator.geolocation.getCurrentPosition(showPos, showErr);
