@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v3';
+    button.innerText = 'v4';
 
     
     document.write(position.coords.latitude);
