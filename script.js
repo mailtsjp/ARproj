@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'PUSH';
+    button.innerText = 'v1';
 
     let places = staticLoadPlaces(position);
     renderPlaces(places);
