@@ -50,9 +50,7 @@ var models = [
         rotation: '0 180 0',
         info: 'gift, Lv. 5, HP 10/10',
         position: '1 1 1',
-        
-    },
-    
+    },    
     {
         //Shaws preschool 437893
         Lat: '1.297660',
@@ -95,11 +93,14 @@ var setModel = function (model, entity) {
 };
 
 function renderPlaces(places) {
+
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        //JS debugging
+        console.log('latitude: ' + c);
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
