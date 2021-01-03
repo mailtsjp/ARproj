@@ -98,10 +98,11 @@ function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        let latitude = places.location.lat;
+        let longitude = places.location.lng;
         //JS debugging
-        console.log('latitude: ' + c);
+        console.log('latitude: ' + latitude);
+        console.log('longitude: ' + longitude);
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
