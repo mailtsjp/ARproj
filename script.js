@@ -1,19 +1,20 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v2';
+    button.innerText = '﹖';
 
-    let places = staticLoadPlaces(position);
+    if(navigator.getLocation){
+    let places = navigator.geolocation.getCurrentPosition(showPos, showErr);
     renderPlaces(places);
+    }
+    else{
+        alert("Sorry! your Browser does not support Geolocation API")
+        }
 };
-
-function staticLoadPlaces(position) {
+function getCurrentPosition(position) {
     return [
         {
             name: 'current location',
             location: {
-                // lat: <your-latitude>,
-                // lng: <your-longitude>,
-
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             },
@@ -105,10 +106,13 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
+        //Draw 3d model
         setModel(models[modelIndex], model);
 
+        //Set 3d model attributes
         model.setAttribute('animation-mixer', '');
 
+        //Listen to button to change 3d model
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
