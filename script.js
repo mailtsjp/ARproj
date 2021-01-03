@@ -96,6 +96,8 @@ var setModel = function (model, entity) {
 function renderPlaces(places) {
 
     let scene = document.querySelector('a-scene');
+    
+    console.log(places.location.lng);
 
     places.forEach((place) => {
         let latitude = places.location.lat;
