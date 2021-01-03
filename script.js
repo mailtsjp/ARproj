@@ -1,30 +1,20 @@
 window.onload = () => {
-    const button = document.querySelector('button[data-action="change"]');
-    button.innerText = 'v8';
+    const button = document.querySelector('button[data-action="change"]'); 
+    button.innerText = 'v9';
 //--------------------
-      //showPosition();
+      
    if(navigator.geolocation) {
                
                // timeout at 60000 milliseconds (60 seconds)
-               var options = {timeout:60000};
-               navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+    var options = {timeout:60000};
+    let places = navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+    console.log(places); 
+    renderPlaces(places);
             } else {
                alert("Sorry, browser does not support geolocation!");
             }
-  //-------------
-     //showLocation();
-    //document.write(position.coords.latitude);
-    
-    if(navigator.getLocation){
-    let places = navigator.geolocation.getCurrentPosition(showPos, showErr);
-    document.write(places);
-    renderPlaces(places);
-    }
-    else{
-        alert("Sorry! your Browser does not support Geolocation API")
-        }
+      
 }
-//----
  function errorHandler(err) {
             if(err.code == 1) {
                alert("Error: Access is denied!");
@@ -32,40 +22,22 @@ window.onload = () => {
                alert("Error: Position is unavailable!");
             }
          }
-//----
-function showLocation(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            alert("Latitude : " + latitude + " Longitude: " + longitude);
-         }
-//---
 
-function showPosition() {
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-            
-        });
-    } else {
-        alert("Sorry, your browser does not support HTML5 geolocation.");
-    }
-}
 function showLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     alert("Latitude : " + latitude + " Longitude: " + longitude);
- }
-function getCurrentPosition(position) {
-    return [
+  return [
         {
-            name: 'current location',
+            name: 'currlatlng',
             location: {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             },
         },
     ];
-}
+  
+ }
 
 var models = [
     {   
@@ -142,7 +114,7 @@ function renderPlaces(places) {
 
     let scene = document.querySelector('a-scene');
     
-    console.log(places.location.lng);
+   console.log(places);
 
     places.forEach((place) => {
         let latitude = places.location.lat;
