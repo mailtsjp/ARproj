@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX';
+    button.innerText = 'vX1';
 //--------------------
       
    if(navigator.geolocation) {
@@ -141,20 +141,20 @@ function renderPlaces(position) {
     let scene = document.querySelector('a-scene');
 
    // position.forEach((position) => {
-        var latitude = position.latitude.toFixed(6); 
-        var longitude = position.longitude.toFixed(6); ;
+        var latitude = position.latitude.toFixed(2); 
+        var longitude = position.longitude;
        
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        alert(latitude);
+        alert(parseFloat(latitude).toFixed(6));
         alert(' : ');
-        alert(longitude);
+        //alert(longitude.toFixed(6));
         //Draw 3d model
         setModel(models[modelIndex], model);
 
         //Match geolocation
-    if((models[modelIndex].lat==latitude) && (models[modelIndex].long == longitude)) 
+    if((models[modelIndex].lat==latitude.toFixed(6)) && (models[modelIndex].long == longitude.toFixed(6))) 
          setModel(models[modelIndex], model);
         //Set 3d model attributes
         model.setAttribute('animation-mixer', '');
