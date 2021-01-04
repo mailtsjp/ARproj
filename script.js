@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX3';
+    button.innerText = 'vX4';
 //--------------------
     var Array = [];
 
@@ -31,7 +31,7 @@ window.onload = () => {
             var lat = position.coords.latitude.toFixed(6);
             var lon = position.coords.longitude.toFixed(6);
             
-             renderPlaces(array);
+             renderPlaces(Array);
         }
     );
      
