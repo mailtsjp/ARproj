@@ -2,12 +2,12 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
     button.innerText = 'vX3';
 //--------------------
-      
+    var Array = [];
+
    if(navigator.geolocation) {
                
              
-       navigator.geolocation.getCurrentPosition( 
-        function(position) {
+       navigator.geolocation.getCurrentPosition( function(position) {
 
          function handle_errors(error)  
          {  
@@ -26,11 +26,12 @@ window.onload = () => {
                  break;  
              }  
          }  
+            Array.push(lat, lon);
 
             var lat = position.coords.latitude.toFixed(6);
             var lon = position.coords.longitude.toFixed(6);
- 
-            renderPlaces(position);
+            
+             renderPlaces(array);
         }
     );
      
@@ -136,13 +137,13 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-function renderPlaces(position) {
+function renderPlaces(Array) {
 
     let scene = document.querySelector('a-scene');
 
    // position.forEach((position) => {
-        var latitude = position.latitude; 
-        var longitude = position.longitude;
+        var latitude = array.latitude; 
+        var longitude = array.longitude;
        
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
