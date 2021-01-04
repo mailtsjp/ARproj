@@ -1,19 +1,43 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'v9';
+    button.innerText = 'vX';
 //--------------------
       
    if(navigator.geolocation) {
                
-               // timeout at 60000 milliseconds (60 seconds)
-    var options = {timeout:60000};
-    let places = navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-    console.log(places); 
-    renderPlaces(places);
+             
+       navigator.geolocation.getCurrentPosition( 
+        function(position) {
+
+         function handle_errors(error)  
+         {  
+             switch(error.code)  
+             {  
+                 case error.PERMISSION_DENIED: document.getElementById("status").innerHTML = "you did not share geolocation data";  
+                 break;  
+
+                 case error.POSITION_UNAVAILABLE: document.getElementById("status").innerHTML = "I could not detect current your position";  
+                 break;  
+
+                 case error.TIMEOUT: document.getElementById("status").innerHTML = "your browser has timed out";  
+                 break;  
+
+                 default: document.getElementById("status").innerHTML = "an unknown error has occurred.";  
+                 break;  
+             }  
+         }  
+
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+ 
+            renderPlaces(position);
+        }
+    );
+     
             } else {
                alert("Sorry, browser does not support geolocation!");
             }
-      
+   
 }
  function errorHandler(err) {
             if(err.code == 1) {
@@ -23,21 +47,23 @@ window.onload = () => {
             }
          }
 
+
 function showLocation(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+    var latitude = position.coords.latitude.toFixed(6); 
+    var longitude = position.coords.longitude.toFixed(6) ;
     alert("Latitude : " + latitude + " Longitude: " + longitude);
   return [
         {
             name: 'currlatlng',
             location: {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
+                lat: position.coords.latitude.toFixed(6) ,
+                lng: position.coords.longitude.toFixed(6) ,
             },
         },
     ];
   
  }
+
 
 var models = [
     {   
@@ -110,28 +136,29 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-function renderPlaces(places) {
+function renderPlaces(position) {
 
     let scene = document.querySelector('a-scene');
-    
-   console.log(places);
 
-    places.forEach((place) => {
-        let latitude = places.location.lat;
-        let longitude = places.location.lng;
-        //JS debugging
-        console.log('latitude: ' + latitude);
-        console.log('longitude: ' + longitude);
-
+   // position.forEach((position) => {
+        var latitude = position.latitude.toFixed(6); 
+        var longitude = position.longitude.toFixed(6); ;
+       
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+       model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
+        alert(latitude);
+        alert(' : ');
+        alert(longitude);
         //Draw 3d model
         setModel(models[modelIndex], model);
 
+        //Match geolocation
+    if((models[modelIndex].lat==latitude) && (models[modelIndex].long == longitude)) 
+         setModel(models[modelIndex], model);
         //Set 3d model attributes
         model.setAttribute('animation-mixer', '');
-
+  
         //Listen to button to change 3d model
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
@@ -141,5 +168,5 @@ function renderPlaces(places) {
         });
 
         scene.appendChild(model);
-    });
+   // });
 }
