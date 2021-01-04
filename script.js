@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX1';
+    button.innerText = 'vX2';
 //--------------------
       
    if(navigator.geolocation) {
@@ -27,8 +27,8 @@ window.onload = () => {
              }  
          }  
 
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
+            var lat = position.coords.latitude.toFixed(6);
+            var lon = position.coords.longitude.toFixed(6);
  
             renderPlaces(position);
         }
@@ -49,15 +49,15 @@ window.onload = () => {
 
 
 function showLocation(position) {
-    var latitude = position.coords.latitude.toFixed(6); 
-    var longitude = position.coords.longitude.toFixed(6) ;
+    var latitude = position.coords.latitude; 
+    var longitude = position.coords.longitude;
     alert("Latitude : " + latitude + " Longitude: " + longitude);
   return [
         {
             name: 'currlatlng',
             location: {
-                lat: position.coords.latitude.toFixed(6) ,
-                lng: position.coords.longitude.toFixed(6) ,
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
             },
         },
     ];
