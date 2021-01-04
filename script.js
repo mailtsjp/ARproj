@@ -26,11 +26,12 @@ window.onload = () => {
                  break;  
              }  
          }  
-            Array.push(lat, lon);
+     
 
             var lat = position.coords.latitude.toFixed(6);
             var lon = position.coords.longitude.toFixed(6);
-            
+            Array.push(lat, lon);
+            alert(Array.lat);
              renderPlaces(Array);
         }
     );
@@ -142,8 +143,8 @@ function renderPlaces(Array) {
     let scene = document.querySelector('a-scene');
 
    // position.forEach((position) => {
-        var latitude = array.latitude; 
-        var longitude = array.longitude;
+        var latitude = Array.latitude; 
+        var longitude = Array.longitude;
        
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
