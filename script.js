@@ -27,8 +27,8 @@ window.onload = () => {
              }  
          }  
 
-            var lat = position.coords.latitude.toFixed(6);
-            var lon = position.coords.longitude.toFixed(6);
+            var lat = position.coords.latitude.toFixed(7);
+            var lon = position.coords.longitude.toFixed(7);
             Array.push(lat, lon);
             //alert(Array.lat);
              renderPlaces(Array);
@@ -78,8 +78,8 @@ var models = [
     */
     {   
         //esta
-        Lat:' 1.302763',
-        Long: '103.899618,
+        Lat:' 1.3027636',
+        Long: '103.8996186,
         url: './assets/gift_box/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
