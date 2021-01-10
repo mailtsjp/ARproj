@@ -79,7 +79,7 @@ var models = [
     {   
         //esta
         Lat:' 1.3027636',
-        Long: '103.8996186,
+        Long: '103.8996186',
         url: './assets/gift_box/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
