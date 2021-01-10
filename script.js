@@ -78,7 +78,7 @@ var models = [
         info: 'giftbox, Lv. 5, HP 10/10',
         position: '1 -30 -60',
     },
-    /*
+    
     {
         url: './assets/cake/scene.gltf',
         info: 'cake, Lv. 5, HP 10/10',
@@ -86,7 +86,7 @@ var models = [
         position: '1 1 -10',
         scale: '0.2 0.2 0.2'
     },
-    */
+    
     {
         // Katong shopping
         Lat: '1.304610',
@@ -110,7 +110,7 @@ var models = [
     
     {   //Dover
         Lat: '1.3055407',
-        Long: '103.7856252’,
+        Long: '103.7856252',
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
@@ -151,9 +151,6 @@ function renderPlaces(Array) {
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        //alert(latitude);
-        //alert(' test01 ');
-        //alert(longitude.toFixed(6));
         //Draw 3d model
         setModel(models[modelIndex], model);
 
