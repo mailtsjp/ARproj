@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX7';
+    button.innerText = 'vX8';
 //--------------------
     var Array = [];
 
@@ -26,7 +26,6 @@ window.onload = () => {
                  break;  
              }  
          }  
-     
 
             var lat = position.coords.latitude.toFixed(6);
             var lon = position.coords.longitude.toFixed(6);
@@ -145,12 +144,12 @@ function renderPlaces(Array) {
 
     let scene = document.querySelector('a-scene');
 
-   // position.forEach((position) => {
-        //var latitude = Array.latitude; 
-        //var longitude = Array.longitude;
+     Array.forEach((geoloccnt) => {
+        var latitude = Array[0]; //latitude; 
+        var longitude = Array[1]; //longitude;
 
-        var latitude = '1.3055407'; 
-        var longitude = '103.7856252';
+        //var latitude = '1.3055407'; 
+        //var longitude = '103.7856252';
        
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
@@ -173,5 +172,5 @@ function renderPlaces(Array) {
         });
 
         scene.appendChild(model);
-   // });
+    });
 }
