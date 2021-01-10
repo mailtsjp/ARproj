@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX4';
+    button.innerText = 'vX5';
 //--------------------
     var Array = [];
 
@@ -107,15 +107,17 @@ var models = [
         info: 'Articuno, Lv. 80, HP 100/100',
         position: '1 1 80',
     },
-    /*
-    {
+    
+    {   //Dover
+        Lat: '1.3055407',
+        Long: '103.7856252’,
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        info: 'Dragonite, Lv. 5, HP 10/10',
+        info: 'Danger, Lv. 5, HP 10/10',
         //position: '1 1 100',
     },
-    */
+    
 ];
 
 var modelIndex = 0;
