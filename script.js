@@ -31,7 +31,7 @@ window.onload = () => {
             var lat = position.coords.latitude.toFixed(6);
             var lon = position.coords.longitude.toFixed(6);
             Array.push(lat, lon);
-            alert(Array.lat);
+            //alert(Array.lat);
              renderPlaces(Array);
         }
     );
@@ -151,8 +151,8 @@ function renderPlaces(Array) {
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        alert(latitude);
-        alert(' : ');
+        //alert(latitude);
+        //alert(' test01 ');
         //alert(longitude.toFixed(6));
         //Draw 3d model
         setModel(models[modelIndex], model);
