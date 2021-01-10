@@ -78,8 +78,8 @@ var models = [
     */
     {   
         //esta
-        Lat:' 1.301180',
-        Long: '103.899223',
+        Lat:' 1.302763',
+        Long: '103.899618,
         url: './assets/gift_box/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
