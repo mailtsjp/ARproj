@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX6';
+    button.innerText = 'vX7';
 //--------------------
     var Array = [];
 
@@ -68,6 +68,7 @@ function showLocation(position) {
 
 
 var models = [
+  /*  
     {
         url: './assets/cake/scene.gltf',
         info: 'Default, Lv. 5, HP 10/10',
@@ -75,6 +76,7 @@ var models = [
         position: '1 1 -10',
         scale: '0.2 0.2 0.2'
     },
+    */
     {   
         //esta
         Lat:' 1.301180',
