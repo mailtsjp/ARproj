@@ -68,6 +68,13 @@ function showLocation(position) {
 
 
 var models = [
+    {
+        url: './assets/cake/scene.gltf',
+        info: 'Default, Lv. 5, HP 10/10',
+        rotation: '0 90 0',
+        position: '1 1 -10',
+        scale: '0.2 0.2 0.2'
+    },
     {   
         //esta
         Lat:' 1.301180',
@@ -78,15 +85,7 @@ var models = [
         info: 'katong esta, Lv. 5, HP 10/10',
         position: '1 -30 -60',
     },
-    
-    {
-        url: './assets/cake/scene.gltf',
-        info: 'Default, Lv. 5, HP 10/10',
-        rotation: '0 90 0',
-        position: '1 1 -10',
-        scale: '0.2 0.2 0.2'
-    },
-    
+   
     {
         // Katong shopping
         Lat: '1.304610',
@@ -145,8 +144,11 @@ function renderPlaces(Array) {
     let scene = document.querySelector('a-scene');
 
    // position.forEach((position) => {
-        var latitude = Array.latitude; 
-        var longitude = Array.longitude;
+        //var latitude = Array.latitude; 
+        //var longitude = Array.longitude;
+
+        var latitude = '1.3055407'; 
+        var longitude = '103.7856252';
        
         let model = document.createElement('a-entity');
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
