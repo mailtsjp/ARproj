@@ -1,6 +1,6 @@
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]'); 
-    button.innerText = 'vX5';
+    button.innerText = 'vX6';
 //--------------------
     var Array = [];
 
@@ -75,13 +75,13 @@ var models = [
         url: './assets/gift_box/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        info: 'giftbox, Lv. 5, HP 10/10',
+        info: 'katong esta, Lv. 5, HP 10/10',
         position: '1 -30 -60',
     },
     
     {
         url: './assets/cake/scene.gltf',
-        info: 'cake, Lv. 5, HP 10/10',
+        info: 'Default, Lv. 5, HP 10/10',
         rotation: '0 90 0',
         position: '1 1 -10',
         scale: '0.2 0.2 0.2'
@@ -94,7 +94,7 @@ var models = [
         url: './assets/gift/scene.gltf',
         scale: '1 1 1',
         rotation: '0 180 0',
-        info: 'gift, Lv. 5, HP 10/10',
+        info: 'katong mall, Lv. 5, HP 10/10',
         position: '1 1 1',
     },    
     {
@@ -104,7 +104,7 @@ var models = [
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
-        info: 'Articuno, Lv. 80, HP 100/100',
+        info: 'katong preschool, Lv. 80, HP 100/100',
         position: '1 1 80',
     },
     
@@ -114,7 +114,7 @@ var models = [
         url: './assets/dragonite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        info: 'Danger, Lv. 5, HP 10/10',
+        info: 'dover, Lv. 5, HP 10/10',
         //position: '1 1 100',
     },
     
