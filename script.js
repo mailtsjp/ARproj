@@ -154,7 +154,7 @@ function renderPlaces(Array) {
        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
         //Draw 3d model
-        setModel(models[modelIndex], model);
+        //setModel(models[modelIndex], model);
 
         //Match geolocation
     if((models[modelIndex].lat==latitude) && (models[modelIndex].long == longitude)) 
