@@ -98,13 +98,13 @@ var models = [
         position: '1 1 1',
     },    
     {
-        //Shaws preschool 437893
-        Lat: '1.297660',
-        Long: '103.890520',
+        //
+        Lat: '1.3082545',
+        Long: '103.8857912',
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
-        info: 'katong preschool, Lv. 80, HP 100/100',
+        info: 'old airport rd, Lv. 80, HP 100/100',
         position: '1 1 80',
     },
     
